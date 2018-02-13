@@ -249,14 +249,12 @@ console.log(all_categories);
 console.log("The number of categories are: " + all_categories.length);
 
 // TODO write code to count the total number of laureates from 2017. (have a good look at how the JSON is structured, and think about what loop(s) you'll need to write.)
-
 var laureates = [];
 var l_index = 0;
-for (i in nobel_prize_winners_2017.prizes.laureates) {
-    for (n in nobel_prize_winners_2017.prizes.laureates[i]) {
-        laureates[l_index] = nobel_prize_winners_2017.prizes.laureates[i].id[n];
+for (i in nobel_prize_winners_2017.prizes) {
+    for (n in nobel_prize_winners_2017.prizes[i].laureates) {
+        laureates[l_index] = nobel_prize_winners_2017.prizes[i].laureates[n].id;
         l_index += 1;
-    } 
+    }
 }
 console.log("The number of laureates is: " + laureates.length);
-
